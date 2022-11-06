@@ -1,5 +1,5 @@
 from selenium import webdriver
-from selenium
+from selenium.webdriver.common.by import By
 from venv.pages.loginpage import *
 from credentials import DRIVER_PATH, LINK
 
