@@ -1,3 +1,5 @@
+import time
+
 from selenium.webdriver.common.by import By
 
 class Login(object):
@@ -16,4 +18,8 @@ class Login(object):
     def login(self):
         self.driver.find_element(*Login.username_locator).send_keys(self.username)
         self.driver.find_element(*Login.password_locator).send_keys(self.password)
+        time.sleep(3)
+
         self.driver.find_element(*Login.login_button).click()  # self.driver.find_element(By.name, self.login_button).click()
+
+        time.sleep(3)
