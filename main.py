@@ -1,21 +1,20 @@
 from selenium import webdriver
-from selenium.webdriver.common.by import By
-from venv.pages.loginpage import *
 from credentials import DRIVER_PATH, LINK
+from pages.loginpage import *
 
-driver = webdriver.Edge(executable_path=DRIVER_PATH)
-driver.get(LINK)
-driver.maximize_window()
+
+
 
 
 def setup():
-    return webdriver.Chrome()
+    return webdriver.Edge(executable_path=DRIVER_PATH)
 
 
 def logintest():
     driver = setup()
 
-    driver.get("https://the-internet.herokuapp.com/login")
+    driver.get(LINK)
+    driver.maximize_window()
 
     login_form = Login(driver)
     login_form.login()
@@ -30,9 +29,6 @@ def logintest():
 
 
 if __name__ == "__main__":
-    user_choice = input("Would You like to  sign-in or register?")
-    if user_choice == "sign-in":
-        driver.find_element(By.LINK_TEXT, "Sign In").click()
-    elif user_choice == "register":
+    logintest()
 
 
