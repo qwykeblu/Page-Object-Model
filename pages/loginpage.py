@@ -1,6 +1,6 @@
 import time
-
 from selenium.webdriver.common.by import By
+
 
 class Login(object):
     def __init__(self, driver):
@@ -24,5 +24,4 @@ class Login(object):
         time.sleep(3)
         # self.driver.find_element(*Login.login_button).click()
         self.driver.find_element(By.NAME, self.login_button).click()
-
         time.sleep(3)
